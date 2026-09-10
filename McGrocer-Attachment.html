@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>McGrocer, Google Shopping & Performance Max Growth Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14201b; --muted:#5f6f67; --line:#e7e3d8; --bg:#f6f4ee; --card:#fffdf8;
+    --accent:#1c7d59; --accent-2:#25a06f;
+    --green-t:#0f7a4d; --green-b:#e8f6ee; --green-l:#bfe6d1;
+    --red-t:#c02a20; --red-b:#fcece9; --red-l:#f2c5bf;
+    --amber-t:#946200; --amber-b:#fbf1dc; --amber-l:#eed6a4;
+    --serif:"Fraunces",Georgia,"Times New Roman",serif;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+  b,strong{font-weight:650;color:var(--ink)}
+
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+  .rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .d1{animation-delay:.08s}.d2{animation-delay:.16s}.d3{animation-delay:.24s}.d4{animation-delay:.32s}.d5{animation-delay:.4s}
+
+  /* HERO */
+  .hero{background:radial-gradient(120% 130% at 88% -10%, #1c5a43 0%, #0e3527 46%, #0a2018 100%);
+    color:#eafaf2;padding:60px 0 66px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;
+    background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:44px 44px;mask-image:radial-gradient(90% 80% at 85% 10%,#000,transparent 72%);opacity:.45}
+  .hero .wrap{position:relative;z-index:1}
+  .hgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .kicker{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#8fe0bf;font-weight:600;margin:0 0 18px}
+  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(29px,4.3vw,42px);line-height:1.12;letter-spacing:-.015em;margin:0 0 16px}
+  .hero h1 em{font-style:italic;color:#7fe3ba}
+  .hero p{font-size:16.5px;color:#c8e6da;margin:0;max-width:46ch}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+  .badge{font-size:12.5px;font-weight:500;color:#d7f2e6;border:1px solid rgba(150,225,190,.35);border-radius:999px;padding:6px 13px;background:rgba(255,255,255,.04)}
+
+  /* HERO GLANCE CARD */
+  .glance{background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));
+    border:1px solid rgba(150,225,190,.22);border-radius:20px;padding:22px 22px;
+    box-shadow:0 24px 60px rgba(0,0,0,.35);backdrop-filter:blur(6px)}
+  .glance h4{margin:0 0 4px;font-size:14px;font-weight:600;color:#eafaf2;letter-spacing:.01em}
+  .glance .gsub{margin:0 0 16px;font-size:12.5px;color:#9fc7b7}
+  .grow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(150,225,190,.16)}
+  .grow:first-of-type{border-top:0}
+  .grow .lab{font-size:14px;color:#dcefe6;font-weight:500}
+  .gstat{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:4px 11px;border-radius:999px;white-space:nowrap}
+  .gstat .dotc{width:7px;height:7px;border-radius:50%}
+  .gstat.g{background:rgba(37,160,111,.18);color:#7fe3ba}.gstat.g .dotc{background:#3fd39a}
+  .gstat.a{background:rgba(210,150,20,.18);color:#f2cf85}.gstat.a .dotc{background:#e9b64d}
+  .gstat.r{background:rgba(210,60,45,.2);color:#f5b3ab}.gstat.r .dotc{background:#ef7267}
+
+  section{padding:52px 0}
+  .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 10px}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(23px,3.4vw,30px);line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+  .sub{font-size:16px;color:var(--muted);margin:0 0 26px;max-width:60ch}
+
+  /* BEFORE / AFTER */
+  .ba{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 6px 22px rgba(20,40,30,.06)}
+  .pimg{height:112px;border-radius:11px;background:
+     radial-gradient(circle at 30% 30%, #ffffff, #eef1ea);
+     border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:13px}
+  .pimg svg{opacity:.8}
+  .pname{font-size:13.5px;font-weight:600;line-height:1.35;margin:0 0 9px}
+  .prow{font-size:13px;color:#40504a;margin:4px 0;display:flex;align-items:center;gap:7px}
+  .price{font-size:15px;font-weight:700;margin-top:8px}
+  .flag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;margin-bottom:11px}
+  .flag.bad{background:var(--red-b);color:var(--red-t)}
+  .flag.good{background:var(--green-b);color:var(--green-t)}
+  .strike{color:var(--red-t);text-decoration:line-through;text-decoration-thickness:1.5px}
+  .good-t{color:var(--green-t);font-weight:650}
+  .arrow{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--accent);font-size:11px;font-weight:600;letter-spacing:.06em}
+  .arrow .circ{width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+  .cap{font-size:14px;color:var(--muted);margin:20px 0 0;max-width:64ch}
+
+  /* FINDINGS */
+  .finds{display:grid;gap:13px}
+  .find{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:18px 20px;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+  .ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+  .ico.red{background:var(--red-b);color:var(--red-t)}
+  .ico.green{background:var(--green-b);color:var(--green-t)}
+  .find h3{font-size:16.5px;margin:2px 0 5px;font-weight:650}
+  .find p{margin:0;font-size:14.5px;color:#3a4a43}
+  .pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
+  .pill.red{background:var(--red-b);color:var(--red-t)}
+  .pill.green{background:var(--green-b);color:var(--green-t)}
+
+  /* METHOD */
+  .method{display:grid;gap:12px}
+  .mstep{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:18px 20px;display:grid;grid-template-columns:34px 1fr;gap:15px;align-items:start}
+  .num{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;font-family:var(--sans)}
+  .mstep p{margin:0;font-size:14.5px;color:#3a4a43}
+
+  /* TIMELINE */
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .tl .col{padding:20px 20px;border-right:1px solid var(--line);position:relative}
+  .tl .col:last-child{border-right:0}
+  .tl .day{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.05em;margin:0 0 9px;display:flex;align-items:center;gap:8px}
+  .tl .dot{width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  .tl p{margin:0;font-size:14px;color:#3a4a43}
+
+  /* OFFER */
+  .offer{background:linear-gradient(135deg,#12503a,#0c3527);border-radius:20px;padding:34px 34px;color:#eafaf2}
+  .offer .eyebrow{color:#8fe0bf}
+  .offer h2{color:#fff;margin-bottom:10px}
+  .offer p{font-size:16px;color:#cfe9dd;margin:0;max-width:60ch}
+  .offer . ok{color:#fff}
+
+  footer{padding:30px 0 50px;text-align:center;color:var(--muted);font-size:13px}
+
+  @media (max-width:760px){
+    .hgrid{grid-template-columns:1fr;gap:30px}
+    .glance{order:2}
+  }
+  @media (max-width:680px){
+    .ba{grid-template-columns:1fr;gap:14px}
+    .arrow{flex-direction:row}
+    .arrow .circ{transform:rotate(90deg)}
+    .tl{grid-template-columns:1fr}
+    .tl .col{border-right:0;border-bottom:1px solid var(--line)}
+    .tl .col:last-child{border-bottom:0}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hgrid">
+      <div>
+        <p class="kicker rise">McGrocer · Google Shopping & Performance Max</p>
+        <h1 class="rise d1">A clear read on your Shopping and Performance Max setup</h1>
+        <p class="rise d2">Where growth is quietly held back today, and the clearest path to scale into the markets you already serve.</p>
+        <div class="badges rise d3">
+          <span class="badge">Feed quality</span>
+          <span class="badge">Conversion tracking</span>
+          <span class="badge">International growth</span>
+        </div>
+      </div>
+
+      <div class="glance rise d2">
+        <h4>Setup at a glance</h4>
+        <p class="gsub">Four areas that shape your ROAS and CPA</p>
+        <div class="grow"><span class="lab">Feed quality</span><span class="gstat r"><span class="dotc"></span>Needs work</span></div>
+        <div class="grow"><span class="lab">Conversion tracking</span><span class="gstat a"><span class="dotc"></span>Gaps to close</span></div>
+        <div class="grow"><span class="lab">International reach</span><span class="gstat g"><span class="dotc"></span>Ready to scale</span></div>
+        <div class="grow"><span class="lab">Site speed &amp; mobile</span><span class="gstat g"><span class="dotc"></span>Strong</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow rise">The clearest fix, first</p>
+    <h2 class="rise d1">One change that touches every product</h2>
+    <p class="sub rise d2">On your feed, the <b>brand</b> field carries the retailer instead of the maker. Google leans on brand to match shopping searches, so this single mapping quietly limits reach and ranking across the catalog.</p>
+
+    <div class="ba rise d3">
+      <div class="pcard">
+        <span class="flag bad">Now</span>
+        <div class="pimg">
+          <svg width="40" height="46" viewBox="0 0 40 46" fill="none"><rect x="9" y="14" width="22" height="28" rx="3" stroke="#9fb0a7" stroke-width="2"/><path d="M15 14v-4a5 5 0 0110 0v4" stroke="#9fb0a7" stroke-width="2"/></svg>
+        </div>
+        <p class="pname">Kendamil Organic Follow-On Milk Stage 2 800g</p>
+        <p class="prow">Brand: <span class="strike">ASDA</span></p>
+        <p class="prow">GTIN: <span class="strike">missing on many items</span></p>
+        <p class="price">£27.25</p>
+      </div>
+
+      <div class="arrow">
+        <div class="circ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span>FIXED</span>
+      </div>
+
+      <div class="pcard">
+        <span class="flag good">Optimised</span>
+        <div class="pimg">
+          <svg width="40" height="46" viewBox="0 0 40 46" fill="none"><rect x="9" y="14" width="22" height="28" rx="3" stroke="#1c7d59" stroke-width="2"/><path d="M15 14v-4a5 5 0 0110 0v4" stroke="#1c7d59" stroke-width="2"/></svg>
+        </div>
+        <p class="pname">Kendamil Organic Follow-On Milk Stage 2, 800g</p>
+        <p class="prow">Brand: <span class="good-t">Kendamil</span></p>
+        <p class="prow">GTIN: <span class="good-t">applied catalog-wide</span></p>
+        <p class="price">£27.25</p>
+      </div>
+    </div>
+    <p class="cap rise d4">The same product, matched to the searches people actually type. Applied once, across all <b>175,000 products</b>.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <p class="eyebrow rise">What else stands out</p>
+    <h2 class="rise d1">Two more things worth your attention</h2>
+    <div class="sub"></div>
+    <div class="finds">
+
+      <div class="find rise d2">
+        <div class="ico red"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 8v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.2" fill="currentColor"/><path d="M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>The data feeding your campaigns has gaps <span class="pill red">Needs attention</span></h3>
+          <p>Key purchase signals are not captured as cleanly as they should be, and there is <b>no consent setup for European visitors</b>. When Shopping and Performance Max optimise on a partial picture, it shows up as <b>softer ROAS and higher CPA</b> than the account is capable of.</p>
+        </div>
+      </div>
+
+      <div class="find rise d3">
+        <div class="ico green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div>
+          <h3>Your international storefronts are ready and waiting <span class="pill green">Opportunity</span></h3>
+          <p>Your <b>German, French, Norwegian and Arabic storefronts are already live</b>, and the United States is already one of your strongest markets. The paid side has not caught up to this footprint yet, so there is a <b>clear, low-risk path</b> to expand Shopping and PMAX into places you already ship to.</p>
+        </div>
+      </div>
+
+      <div class="find rise d4">
+        <div class="ico green"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h3>The foundation is solid <span class="pill green">Strong</span></h3>
+          <p>Your storefront <b>loads fast and holds up well on mobile</b>, so the work goes straight into feed, tracking and expansion rather than fixing groundwork first.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <p class="eyebrow rise">How it is handled</p>
+    <h2 class="rise d1">Built for 175,000 products, not done by hand</h2>
+    <p class="sub rise d2">Scale is the whole point here. Nothing below is a product-by-product job.</p>
+    <div class="method">
+      <div class="mstep rise d2"><div class="num">1</div><p><b>Brand, GTIN and product types</b> are corrected through supplemental feeds and automated rules, so fixes apply across the whole catalog and stay correct as products change.</p></div>
+      <div class="mstep rise d3"><div class="num">2</div><p><b>Tracking is rebuilt</b> so every purchase and its value is captured cleanly, with consent handled for European traffic, giving your campaigns accurate signals to optimise on.</p></div>
+      <div class="mstep rise d4"><div class="num">3</div><p><b>Campaigns are structured by category and margin</b>, then scaled one market at a time using the storefronts already in place.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <p class="eyebrow rise">A simple start</p>
+    <h2 class="rise d1">The first 90 days</h2>
+    <div class="sub"></div>
+    <div class="tl rise d2">
+      <div class="col"><p class="day"><span class="dot"></span>DAYS 1 TO 30</p><p>Feed cleanup (brand, GTIN, titles), tracking fixed, and current campaigns tightened.</p></div>
+      <div class="col"><p class="day"><span class="dot"></span>DAYS 31 TO 60</p><p>Shopping and PMAX restructured by category and margin, with budget pacing and asset testing.</p></div>
+      <div class="col"><p class="day"><span class="dot"></span>DAYS 61 TO 90</p><p>Expansion into US and European storefronts, scaling what works, reported on ROAS and CPA.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="offer rise">
+      <p class="eyebrow">No cost, no obligation</p>
+      <h2>A free audit within 24 hours</h2>
+      <p>I can put the exact feed and tracking gaps in front of you within <b style="color:#fff">24 hours</b>, with the specific products affected and the order they should be fixed in. If it is useful, we take it from there.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Prepared by Usman</footer>
+
+</body>
+</html>
